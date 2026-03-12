@@ -10,10 +10,10 @@ st.set_page_config(page_title="Portfolio | Asier Dorronsoro", layout="wide")
 ID_VIDEO_INTRO = "vLCkFJySzMI" 
 
 # RUTAS LOCALES DE TUS IMÁGENES (Alojadas en la carpeta 'static')
-URL_PORTADA = "/app/static/portada.jpeg"
-URL_ELKAR   = "/app/static/elkarraizketa.jpeg"
-URL_MALCUBO = "/app/static/malcubo.jpeg"
-URL_RASTREA = "/app/static/rastreator.jpeg"
+URL_PORTADA = "app/static/portada.jpeg"
+URL_ELKAR   = "app/static/elkarraizketa.jpeg"
+URL_MALCUBO = "app/static/malcubo.jpeg"
+URL_RASTREA = "app/static/rastreator.jpeg"
 
 # ==========================================
 # 2. CSS Y HTML NATIVO
@@ -199,3 +199,4 @@ html_nativo = f"""
 
 
 st.markdown(html_nativo, unsafe_allow_html=True)
+
