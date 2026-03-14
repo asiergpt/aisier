@@ -31,7 +31,7 @@ html_nativo = f"""
 .portada-desktop {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
 .portada-mobile {{ display: none; width: 100%; height: 100%; object-fit: cover; }}
 
-.col-der iframe {{ width: 100%; height: 100%; aspect-ratio: 9/16; border: none; border-radius: 12px; }}
+.col-der iframe {{ width: 100%; height: 100%; border: none; border-radius: 12px; }}
 
 .black-block {{ background-color: #000; border-radius: 28px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.05); padding: 60px 30px; margin-bottom: 30px; width: 100%; }}
 .neon-title {{ font-family: 'Quicksand', sans-serif; font-size: clamp(32px, 4vw, 52px); font-weight: 600; text-align: center; margin-bottom: 50px; color: transparent; -webkit-text-stroke: 1.5px #ffcc66; text-shadow: 0 0 10px rgba(255, 204, 102, 0.3); }}
@@ -78,14 +78,14 @@ html_nativo = f"""
     .portada-mobile {{ display: block; }}
     .cards-container {{ display: grid !important; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }}
     .card-link {{ width: 100%; display: block; }}
-    .card {{ width: 100% !important; height: 260px !important; aspect-ratio: auto !important; display: block; }}
+    .card {{ width: 100% !important; height: 360px !important; aspect-ratio: auto !important; display: block; }}
     .card-bg {{ width: 100%; height: 100%; top: 0; left: 0; object-fit: cover; }}
     .card-title {{ font-size: 15px; }}
     .card-subtitle {{ font-size: 11px; margin-bottom: 8px; }}
     .card-btn {{ font-size: 12px; padding: 8px; }}
     .card-content {{ bottom: 12px; left: 12px; right: 12px; }}
-    .col-der {{ min-height: 400px; }}
-    .col-der iframe {{ min-height: 400px; aspect-ratio: auto; }}
+    .col-der {{ min-height: 220px; background: #000 !important; }}
+    .col-der iframe {{ width: 100% !important; height: 220px !important; aspect-ratio: auto !important; min-height: unset !important; }}
     .black-block {{ padding: 40px 20px; width: 100%; }}
 }}
 </style>
