@@ -97,9 +97,22 @@ html_nativo = f"""
     .card-title {{ font-size: 13px; margin-bottom: 3px; }}
     .card-subtitle {{ font-size: 10px; margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }}
     .card-btn {{ font-size: 11px; padding: 7px; }}
-    /* Video — revertido al original */
-    .col-der {{ min-height: 400px; }}
-    .col-der iframe {{ min-height: 400px; aspect-ratio: auto; }}
+    /* Video — igual que Elkarraizketa: contenedor centrado, iframe con max-width fijo */
+    .col-der {{ 
+        min-height: unset !important;
+        padding: 10px 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }}
+    .col-der iframe {{ 
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 569px !important;
+        aspect-ratio: auto !important;
+        border-radius: 16px !important;
+        min-height: unset !important;
+    }}
     .black-block {{ padding: 32px 14px; width: 100%; }}
 }}
 </style>
@@ -144,7 +157,7 @@ html_nativo = f"""
 </div>
 </div>
 </a>
-<a href="https://networking-ad.streamlit.app/" target="_blank" class="card-link">
+<a href="#" target="_blank" class="card-link">
 <div class="card">
 <img class="card-bg" src="{URL_NETWORKING}">
 <div class="card-gradient"></div>
