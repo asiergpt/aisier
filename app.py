@@ -46,6 +46,10 @@ html_nativo = f"""
 .card-subtitle {{ font-size: 12px; color: #ccc; margin-bottom: 12px; line-height: 1.4; }}
 .card-btn {{ background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 10px; color: white; width: 100%; text-align: center; font-size: 13px; font-weight: 500; transition: all 0.3s; }}
 
+.card-soon {{ position: absolute; inset: 0; background: rgba(0,0,0,0.72); z-index: 6; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: 16px; }}
+.card-soon-label {{ font-family: 'Quicksand', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,204,102,0.8); border: 1px solid rgba(255,204,102,0.3); border-radius: 20px; padding: 5px 14px; }}
+.card-soon-icon {{ font-size: 1.6rem; }}
+
 .card-link:hover .card {{ transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 35px 8px rgba(255, 204, 102, 0.2); }}
 .card-link:hover .card-bg {{ opacity: 0.9; }}
 .card-link:hover .card-btn {{ border-color: rgba(255, 204, 102, 0.5); background: rgba(255, 255, 255, 0.15); }}
@@ -93,15 +97,9 @@ html_nativo = f"""
     .card-title {{ font-size: 13px; margin-bottom: 3px; }}
     .card-subtitle {{ font-size: 10px; margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }}
     .card-btn {{ font-size: 11px; padding: 7px; }}
-    /* Video — mismo sistema que Elkarraizketa */
-    .col-der {{ min-height: 420px; padding: 10px 0; }}
-    .col-der iframe {{ 
-        width: 100% !important; 
-        max-width: 320px !important; 
-        height: 400px !important; 
-        aspect-ratio: auto !important; 
-        border-radius: 16px !important;
-    }}
+    /* Video — revertido al original */
+    .col-der {{ min-height: 400px; }}
+    .col-der iframe {{ min-height: 400px; aspect-ratio: auto; }}
     .black-block {{ padding: 32px 14px; width: 100%; }}
 }}
 </style>
@@ -146,18 +144,7 @@ html_nativo = f"""
 </div>
 </div>
 </a>
-<a href="#" target="_blank" class="card-link">
-<div class="card">
-<img class="card-bg" src="{URL_RASTREA}">
-<div class="card-gradient"></div>
-<div class="card-content">
-<div class="card-title">Rastreator 📈</div>
-<div class="card-subtitle">Monitoriza noticias y eventos empresariales en el País Vasco • News & Network</div>
-<div class="card-btn">Explorar App</div>
-</div>
-</div>
-</a>
-<a href="#" target="_blank" class="card-link">
+<a href="https://networking-ad.streamlit.app/" target="_blank" class="card-link">
 <div class="card">
 <img class="card-bg" src="{URL_NETWORKING}">
 <div class="card-gradient"></div>
@@ -168,6 +155,20 @@ html_nativo = f"""
 </div>
 </div>
 </a>
+<div class="card-link" style="cursor:default;">
+<div class="card">
+<img class="card-bg" src="{URL_RASTREA}">
+<div class="card-gradient"></div>
+<div class="card-soon">
+<div class="card-soon-icon">🚧</div>
+<div class="card-soon-label">Próximamente</div>
+</div>
+<div class="card-content">
+<div class="card-title">Rastreator 📈</div>
+<div class="card-subtitle">Monitoriza noticias y eventos empresariales</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
