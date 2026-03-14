@@ -38,8 +38,8 @@ html_nativo = f"""
 
 .cards-container {{ display: flex; gap: 24px; max-width: 1200px; margin: 0 auto; width: 100%; }}
 .card-link {{ flex: 1; text-decoration: none; color: inherit; display: block; width: 100%; }}
-.card {{ position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 3/4; background: #1a1a1a; transition: transform 0.4s ease, box-shadow 0.4s ease; width: 100%; height: 100%; display: block; }}
-.card-bg {{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s; display: block; }}
+.card {{ position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 3/4; background: #000000; transition: transform 0.4s ease, box-shadow 0.4s ease; width: 100%; height: 100%; display: block; }}
+.card-bg {{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.7; transition: opacity 0.3s; display: block; }}
 .card-gradient {{ position: absolute; bottom: 0; left: 0; width: 100%; height: 70%; background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); z-index: 2; }}
 .card-content {{ position: absolute; bottom: 20px; left: 20px; right: 20px; z-index: 5; color: white; }}
 .card-title {{ font-size: 20px; font-weight: bold; margin-bottom: 5px; line-height: 1.2; }}
@@ -93,9 +93,15 @@ html_nativo = f"""
     .card-title {{ font-size: 13px; margin-bottom: 3px; }}
     .card-subtitle {{ font-size: 10px; margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }}
     .card-btn {{ font-size: 11px; padding: 7px; }}
-    /* Video: altura fija razonable en móvil */
-    .col-der {{ min-height: 200px; background: #000 !important; }}
-    .col-der iframe {{ width: 100% !important; height: 200px !important; aspect-ratio: auto !important; min-height: unset !important; }}
+    /* Video — mismo sistema que Elkarraizketa */
+    .col-der {{ min-height: 420px; padding: 10px 0; }}
+    .col-der iframe {{ 
+        width: 100% !important; 
+        max-width: 320px !important; 
+        height: 400px !important; 
+        aspect-ratio: auto !important; 
+        border-radius: 16px !important;
+    }}
     .black-block {{ padding: 32px 14px; width: 100%; }}
 }}
 </style>
