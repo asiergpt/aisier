@@ -73,20 +73,30 @@ html_nativo = f"""
 @media (max-width: 768px) {{
     .top-layout, .footer-links {{ flex-direction: column; }}
     .f-divider {{ display: none; }}
-    .col-izq {{ min-height: 460px; }}
+    .col-izq {{ min-height: 420px; }}
     .portada-desktop {{ display: none; }}
     .portada-mobile {{ display: block; }}
-    .cards-container {{ display: grid !important; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }}
+    /* Cards: 2 columnas con aspect-ratio para que no se corten */
+    .cards-container {{ display: grid !important; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; }}
     .card-link {{ width: 100%; display: block; }}
-    .card {{ width: 100% !important; height: 360px !important; aspect-ratio: auto !important; display: block; }}
-    .card-bg {{ width: 100%; height: 100%; top: 0; left: 0; object-fit: cover; }}
-    .card-title {{ font-size: 15px; }}
-    .card-subtitle {{ font-size: 11px; margin-bottom: 8px; }}
-    .card-btn {{ font-size: 12px; padding: 8px; }}
-    .card-content {{ bottom: 12px; left: 12px; right: 12px; }}
-    .col-der {{ min-height: 220px; background: #000 !important; }}
-    .col-der iframe {{ width: 100% !important; height: 220px !important; aspect-ratio: auto !important; min-height: unset !important; }}
-    .black-block {{ padding: 40px 20px; width: 100%; }}
+    .card {{
+        width: 100% !important;
+        height: 0 !important;
+        padding-bottom: 140% !important;
+        aspect-ratio: auto !important;
+        display: block;
+        position: relative;
+    }}
+    .card-bg {{ width: 100%; height: 100%; top: 0; left: 0; object-fit: cover; position: absolute; }}
+    .card-gradient {{ position: absolute; }}
+    .card-content {{ position: absolute; bottom: 10px; left: 10px; right: 10px; }}
+    .card-title {{ font-size: 13px; margin-bottom: 3px; }}
+    .card-subtitle {{ font-size: 10px; margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }}
+    .card-btn {{ font-size: 11px; padding: 7px; }}
+    /* Video: altura fija razonable en móvil */
+    .col-der {{ min-height: 200px; background: #000 !important; }}
+    .col-der iframe {{ width: 100% !important; height: 200px !important; aspect-ratio: auto !important; min-height: unset !important; }}
+    .black-block {{ padding: 32px 14px; width: 100%; }}
 }}
 </style>
 
@@ -97,9 +107,9 @@ html_nativo = f"""
 <img class="portada-mobile" src="{URL_PORTADA_MOBILE}" alt="Portada Mobile" onerror="this.src='{URL_PORTADA}'">
 </div>
 <div class="col-der">
-<iframe src="https://www.youtube.com/embed/{ID_VIDEO_INTRO}?rel=0"
+<iframe src="https://www.youtube.com/embed/{ID_VIDEO_INTRO}?rel=0&playsinline=1"
         title="Video Intro" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
 </iframe>
 </div>
