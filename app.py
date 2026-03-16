@@ -7,6 +7,17 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+# 2. El truco para forzar el título exacto y quitar "· Streamlit"
+components.html(
+    """
+    <script>
+        window.parent.document.title = '👋 KAIxo | Asier Dorronsoro';
+    </script>
+    """,
+    height=0,
+    width=0,
+)
+
 ID_VIDEO_INTRO = "vLCkFJySzMI"
 
 URL_PORTADA        = "app/static/portada.jpeg"
