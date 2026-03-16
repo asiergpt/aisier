@@ -157,7 +157,7 @@ html_nativo = f"""
 </div>
 </div>
 </a>
-<a href="#" target="_blank" class="card-link">
+<a href="https://networking-ad.streamlit.app" target="_blank" class="card-link">
 <div class="card">
 <img class="card-bg" src="{URL_NETWORKING}">
 <div class="card-gradient"></div>
