@@ -1,6 +1,11 @@
 import streamlit as st
 
-st.set_page_config(page_title="Portfolio | Asier Dorronsoro", layout="wide")
+st.set_page_config(
+    page_title="KAIxo | Asier Dorronsoro",
+    page_icon="👋",
+    layout="centered",
+    initial_sidebar_state="collapsed"
+)
 
 ID_VIDEO_INTRO = "vLCkFJySzMI"
 
