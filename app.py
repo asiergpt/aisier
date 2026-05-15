@@ -17,6 +17,7 @@ URL_ELKAR          = "app/static/elkarraizketa.jpeg"
 URL_MALCUBO        = "app/static/malcubo.jpeg"
 URL_RASTREA        = "app/static/rastreator.jpeg"
 URL_NETWORKING     = "app/static/networking.png"
+URL_AICTUALIDAD    = "app/static/aictualidad.jpeg"
 
 html_nativo = f"""
 <style>
@@ -56,6 +57,8 @@ html_nativo = f"""
 .card-soon {{ position: absolute; inset: 0; background: rgba(0,0,0,0.72); z-index: 6; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: 16px; }}
 .card-soon-label {{ font-family: 'Quicksand', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,204,102,0.8); border: 1px solid rgba(255,204,102,0.3); border-radius: 20px; padding: 5px 14px; }}
 .card-soon-icon {{ font-size: 1.6rem; }}
+
+.card-badge {{ position: absolute; top: 12px; right: 12px; z-index: 7; font-family: 'Quicksand', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,204,102,0.95); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,204,102,0.45); border-radius: 20px; padding: 4px 10px; backdrop-filter: blur(4px); }}
 
 .card-link:hover .card {{ transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 35px 8px rgba(255, 204, 102, 0.2); }}
 .card-link:hover .card-bg {{ opacity: 0.9; }}
@@ -142,17 +145,6 @@ html_nativo = f"""
 <div class="black-block">
 <div class="neon-title">Productos Digitales</div>
 <div class="cards-container">
-<a href="https://elkarraizketa.streamlit.app/" target="_blank" class="card-link">
-<div class="card">
-<img class="card-bg" src="{URL_ELKAR}">
-<div class="card-gradient"></div>
-<div class="card-content">
-<div class="card-title">Elkarr AI zketa 🎙️</div>
-<div class="card-subtitle">Conoce a Asier Dorronsoro • FAQ</div>
-<div class="card-btn">Explorar App</div>
-</div>
-</div>
-</a>
 <a href="https://malcubo.streamlit.app/" target="_blank" class="card-link">
 <div class="card">
 <img class="card-bg" src="{URL_MALCUBO}">
@@ -161,6 +153,17 @@ html_nativo = f"""
 <div class="card-title">M al cubo 🌐</div>
 <div class="card-subtitle">Penetra el ecosistema empresarial Vasco • Alta Dirección</div>
 <div class="card-btn">Explorar App</div>
+</div>
+</div>
+</a>
+<a href="https://open.spotify.com/show/5lHkJuyEcdPVAFvr4BOOOm?si=9b5311f450924bc5" target="_blank" class="card-link">
+<div class="card">
+<img class="card-bg" src="{URL_AICTUALIDAD}">
+<div class="card-gradient"></div>
+<div class="card-content">
+<div class="card-title">AIctualidad 🎧</div>
+<div class="card-subtitle">Podcast diario de IA para ejecutivos hispanohablantes</div>
+<div class="card-btn">Escuchar en Spotify</div>
 </div>
 </div>
 </a>
@@ -175,20 +178,30 @@ html_nativo = f"""
 </div>
 </div>
 </a>
-<div class="card-link" style="cursor:default;">
+<a href="https://elkarraizketa.streamlit.app/" target="_blank" class="card-link">
+<div class="card">
+<img class="card-bg" src="{URL_ELKAR}">
+<div class="card-gradient"></div>
+<div class="card-badge">En desarrollo</div>
+<div class="card-content">
+<div class="card-title">Elkarr AI zketa 🎙️</div>
+<div class="card-subtitle">Conoce a Asier Dorronsoro • FAQ</div>
+<div class="card-btn">Explorar App</div>
+</div>
+</div>
+</a>
+<a href="https://multiverse-computing-coloquio-dba.vercel.app/" target="_blank" class="card-link">
 <div class="card">
 <img class="card-bg" src="{URL_RASTREA}">
 <div class="card-gradient"></div>
-<div class="card-soon">
-<div class="card-soon-icon">🚧</div>
-<div class="card-soon-label">Próximamente</div>
-</div>
+<div class="card-badge">En desarrollo</div>
 <div class="card-content">
 <div class="card-title">Rastreator 📈</div>
-<div class="card-subtitle">Monitoriza noticias y eventos empresariales</div>
+<div class="card-subtitle">Prensa y vídeos de YouTube sintetizados en un dossier inteligente.</div>
+<div class="card-btn">Explorar ejemplo</div>
 </div>
 </div>
-</div>
+</a>
 </div>
 </div>
 
