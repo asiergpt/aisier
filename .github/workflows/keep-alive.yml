@@ -9,16 +9,26 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping app
+      - name: Ping apps
         run: |
-          HTTP_CODE=$(curl -sS -o /dev/null -w "%{http_code}" \
-            -A "Mozilla/5.0 (KeepAlive Bot)" \
-            --max-time 30 \
-            "https://asierdorronsoro.streamlit.app/")
-          echo "HTTP status: $HTTP_CODE"
-          if [[ "$HTTP_CODE" =~ ^[23] ]]; then
-            echo "Ping OK"
-          else
-            echo "Ping failed"
-            exit 1
-          fi
+          URLS=(
+            "https://asierdorronsoro.streamlit.app/"
+            "https://networking-ad.streamlit.app/"
+            "https://elkarraizketa.streamlit.app/"
+          )
+          FAILED=0
+          for URL in "${URLS[@]}"; do
+            echo "→ Pinging $URL"
+            HTTP_CODE=$(curl -sS -o /dev/null -w "%{http_code}" \
+              -A "Mozilla/5.0 (KeepAlive Bot)" \
+              --max-time 30 \
+              "$URL")
+            echo "   HTTP status: $HTTP_CODE"
+            if [[ "$HTTP_CODE" =~ ^[23] ]]; then
+              echo "   ✅ OK"
+            else
+              echo "   ❌ Failed"
+              FAILED=1
+            fi
+          done
+          exit $FAILED
