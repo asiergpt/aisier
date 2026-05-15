@@ -11,8 +11,14 @@ jobs:
     steps:
       - name: Ping app
         run: |
-          curl -fsSL --retry 3 --retry-delay 10 \
+          HTTP_CODE=$(curl -sS -o /dev/null -w "%{http_code}" \
             -A "Mozilla/5.0 (KeepAlive Bot)" \
-            "https://asierdorronsoro.streamlit.app/" \
-            -o /dev/null
-          echo "Ping OK"
+            --max-time 30 \
+            "https://asierdorronsoro.streamlit.app/")
+          echo "HTTP status: $HTTP_CODE"
+          if [[ "$HTTP_CODE" =~ ^[23] ]]; then
+            echo "Ping OK"
+          else
+            echo "Ping failed"
+            exit 1
+          fi
