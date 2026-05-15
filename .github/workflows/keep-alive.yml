@@ -15,6 +15,7 @@ jobs:
             "https://asierdorronsoro.streamlit.app/"
             "https://networking-ad.streamlit.app/"
             "https://elkarraizketa.streamlit.app/"
+            "https://malcubo.streamlit.app/"
           )
           FAILED=0
           for URL in "${URLS[@]}"; do
