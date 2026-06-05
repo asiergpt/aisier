@@ -1,10 +1,8 @@
 name: Keep Streamlit Awake
-
 on:
   schedule:
     - cron: '7,37 * * * *'
   workflow_dispatch:
-
 jobs:
   ping:
     runs-on: ubuntu-latest
@@ -12,10 +10,10 @@ jobs:
       - name: Ping apps
         run: |
           URLS=(
-            "https://asierdorronsoro.streamlit.app/"
-            "https://networking-ad.streamlit.app/"
-            "https://elkarraizketa.streamlit.app/"
-            "https://malcubo.streamlit.app/"
+            "https://asierdorronsoro.streamlit.app/_stcore/health"
+            "https://networking-ad.streamlit.app/_stcore/health"
+            "https://elkarraizketa.streamlit.app/_stcore/health"
+            "https://malcubo.streamlit.app/_stcore/health"
           )
           FAILED=0
           for URL in "${URLS[@]}"; do
